@@ -201,27 +201,17 @@ void EXTI0_IRQHandler(void)
   HAL_GPIO_EXTI_IRQHandler(GPIO_PIN_0);
   /* USER CODE BEGIN EXTI0_IRQn 1 */
   
-  //printf("IRQ Pin val: %d \n", HAL_GPIO_ReadPin(GPIOA, GPIO_PIN_0));
-  
   if (HAL_GPIO_ReadPin(GPIOA, GPIO_PIN_0) == 1) {
 
-    //printf("StartTimerVal: %d \n", __HAL_TIM_GET_COUNTER(&htim10));
-    
-    //printf("\nIRQ START: %d \n", HAL_GPIO_ReadPin(GPIOA, GPIO_PIN_0));
-    //printf("StartTimerVal: %d \n\n", __HAL_TIM_GET_COUNTER(&htim1));
-    
     __HAL_TIM_SET_COUNTER(&htim4, 0);
     HAL_TIM_Base_Start_IT(&htim4);
     
   } else {
 
-    //HAL_TIM_Base_Stop_IT(&htim10);
-
     HAL_TIM_Base_Stop_IT(&htim4);
-    //printf("IRQ END: %d \n", HAL_GPIO_ReadPin(GPIOA, GPIO_PIN_0));
-    
+
     time = __HAL_TIM_GET_COUNTER(&htim4) / 13;
-    
+
     printf("StopTimerVal: %d \n\n", time);
 
   }
@@ -241,10 +231,6 @@ void TIM1_UP_TIM10_IRQHandler(void)
   /* USER CODE END TIM1_UP_TIM10_IRQn 0 */
   HAL_TIM_IRQHandler(&htim1);
   /* USER CODE BEGIN TIM1_UP_TIM10_IRQn 1 */
-
-  time = __HAL_TIM_GET_COUNTER(&htim1) / 10;
-  
-  printf("Tim1 UP: %d \n", time);
 
   /* USER CODE END TIM1_UP_TIM10_IRQn 1 */
 }
@@ -275,9 +261,7 @@ void TIM3_IRQHandler(void)
   /* USER CODE BEGIN TIM3_IRQn 1 */
  
   HAL_TIM_Base_Start_IT(&htim3);
-  
   HAL_GPIO_WritePin(GPIOE, GPIO_PIN_5, GPIO_PIN_RESET);
-  //HAL_GPIO_TogglePin(GPIOD, GPIO_PIN_10);
 
   /* USER CODE END TIM3_IRQn 1 */
 }
@@ -292,10 +276,6 @@ void TIM4_IRQHandler(void)
   /* USER CODE END TIM4_IRQn 0 */
   HAL_TIM_IRQHandler(&htim4);
   /* USER CODE BEGIN TIM4_IRQn 1 */
-
-  //HAL_TIM_Base_Stop_IT(&htim4);
-  //__HAL_TIM_SET_COUNTER(&htim4, 0);
-  //printf("Tim4: %d \n", __HAL_TIM_GET_COUNTER(&htim4));
 
   /* USER CODE END TIM4_IRQn 1 */
 }

@@ -90,49 +90,25 @@ int main(void)
 
   /* USER CODE BEGIN 2 */
   
-  printf("Start\n");
-
-  //__HAL_TIM_SetCounter(&htim2,0);
-  //HAL_TIM_Base_Start_IT(&htim2);
-  
-  int i = 10;
-  
-  while (1)
-  {
-    i--;
-
-    //HAL_GPIO_WritePin(GPIOD, GPIO_PIN_10, GPIO_PIN_SET);
-    //HAL_Delay(100);
-    //HAL_GPIO_WritePin(GPIOD, GPIO_PIN_10, GPIO_PIN_RESET);
-    
-    HAL_Delay(50);
-    //printf("\n\n>>> Sending signal >>>\n");
-    
-    __HAL_TIM_SET_COUNTER(&htim3, 0);
-    HAL_GPIO_WritePin(GPIOE, GPIO_PIN_5, GPIO_PIN_SET);
-    HAL_TIM_Base_Start_IT(&htim3);
-
-    //HAL_GPIO_WritePin(GPIOD, GPIO_PIN_10, GPIO_PIN_RESET);
-    //HAL_Delay(500);
-  }
-  
-  //HAL_Delay(1000);
-
-  //HAL_TIM_Base_Stop_IT(&htim2);
-  
-  
-  // HAL_GPIO_TogglePin(GPIOD, GPIO_PIN_10);
-
   /* USER CODE END 2 */
 
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
+
+  printf("Start\n");
+
   while (1)
   {
   /* USER CODE END WHILE */
 
   /* USER CODE BEGIN 3 */
-  
+
+    HAL_Delay(50);
+    
+    __HAL_TIM_SET_COUNTER(&htim3, 0);
+    HAL_GPIO_WritePin(GPIOE, GPIO_PIN_5, GPIO_PIN_SET);
+    HAL_TIM_Base_Start_IT(&htim3);
+    
   }
   /* USER CODE END 3 */
 
