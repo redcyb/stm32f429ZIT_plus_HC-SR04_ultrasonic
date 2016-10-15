@@ -37,6 +37,8 @@
 
 /* USER CODE BEGIN 0 */
 
+__IO uint32_t time = 0;
+
 /* USER CODE END 0 */
 
 /* External variables --------------------------------------------------------*/
@@ -190,8 +192,6 @@ void SysTick_Handler(void)
 /**
 * @brief This function handles EXTI line0 interrupt.
 */
-
-__IO uint32_t time = 0;
 
 void EXTI0_IRQHandler(void)
 {
