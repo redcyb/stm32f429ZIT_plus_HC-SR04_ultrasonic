@@ -209,8 +209,9 @@ void EXTI0_IRQHandler(void)
     HAL_TIM_Base_Stop_IT(&htim4);
 
     USEchoTime = __HAL_TIM_GET_COUNTER(&htim4);
-    USEchoDistance = USEchoTime / 11;
+    USEchoDistance = (USEchoTime * 10) / 95;
 
+    printf("StopTimerVal: %d \n\n", USEchoTime);
     printf("StopTimerVal: %d \n\n", USEchoDistance);
 
   }
