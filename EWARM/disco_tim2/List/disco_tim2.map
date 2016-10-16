@@ -1,6 +1,6 @@
 ###############################################################################
 #
-# IAR ELF Linker V7.50.2.10312/W32 for ARM                16/Oct/2016  09:54:22
+# IAR ELF Linker V7.50.2.10312/W32 for ARM                16/Oct/2016  10:51:37
 # Copyright 2007-2015 IAR Systems AB.
 #
 #    Output file  =  
@@ -248,16 +248,16 @@ __dlib_dynamic_initialization = normal
     HEAP              uninit   0x200005f0   0x200  <Block tail>
                              - 0x200007f0   0x600
 
-"P2", part 3 of 3:                          0x1ac
+"P2", part 3 of 3:                          0x1b0
   .bss                zero     0x200007f0    0x80  XShHandles.o [3]
   .bss                zero     0x20000870    0x78  main.o [1]
   .bss                zero     0x200008e8    0x50  xfiles.o [3]
   .bss                zero     0x20000938    0x50  xfiles.o [3]
-  .bss                zero     0x20000988     0x8  xxmemxmalloc.o [3]
-  .bss                zero     0x20000990     0x4  stm32f4xx_hal.o [1]
-  .bss                zero     0x20000994     0x4  stm32f4xx_it.o [1]
-  .bss                zero     0x20000998     0x4  xgetmemchunk.o [3]
-                             - 0x2000099c   0x1ac
+  .bss                zero     0x20000988     0x8  stm32f4xx_it.o [1]
+  .bss                zero     0x20000990     0x8  xxmemxmalloc.o [3]
+  .bss                zero     0x20000998     0x4  stm32f4xx_hal.o [1]
+  .bss                zero     0x2000099c     0x4  xgetmemchunk.o [3]
+                             - 0x200009a0   0x1b0
 
 
 *******************************************************************************
@@ -267,8 +267,8 @@ __dlib_dynamic_initialization = normal
           Address     Size
           -------     ----
 Zero (__iar_zero_init3)
-    1 destination range, total size 0x1ac:
-          0x200007f0  0x1ac
+    1 destination range, total size 0x1b0:
+          0x200007f0  0x1b0
 
 Copy/packbits (__iar_packbits_init_single3)
     1 source range, total size 0x8a (28% of destination):
@@ -295,10 +295,10 @@ C:\stm_projects\disco_tim2\EWARM\disco_tim2\Obj: [1]
     stm32f4xx_hal_rcc.o       1 032
     stm32f4xx_hal_tim.o         978
     stm32f4xx_hal_tim_ex.o       78
-    stm32f4xx_it.o              180                 4
+    stm32f4xx_it.o              180                 8
     system_stm32f4xx.o           80        1        4
     -------------------------------------------------
-    Total:                    4 940        1      132
+    Total:                    4 940        1      136
 
 command line: [2]
     -------------------------------------------------
@@ -387,7 +387,7 @@ shb_l.a: [6]
     Gaps                         48        2
     Linker created                        32    1 536
 -----------------------------------------------------
-    Grand Total:             14 774      172    2 456
+    Grand Total:             14 774      172    2 460
 
 
 *******************************************************************************
@@ -404,7 +404,7 @@ BusFault_Handler        0x0800343b    0x2  Code  Gb  stm32f4xx_it.o [1]
 CSTACK$$Base            0x200001f0          --   Gb  - Linker created -
 CSTACK$$Limit           0x200005f0          --   Gb  - Linker created -
 DebugMon_Handler        0x08003441    0x2  Code  Gb  stm32f4xx_it.o [1]
-EXTI0_IRQHandler        0x08003453   0x48  Code  Gb  stm32f4xx_it.o [1]
+EXTI0_IRQHandler        0x08003453   0x4a  Code  Gb  stm32f4xx_it.o [1]
 HAL_Delay               0x080024b9   0x18  Code  Wk  stm32f4xx_hal.o [1]
 HAL_GPIO_EXTI_Callback  0x08002ce1    0x2  Code  Wk  stm32f4xx_hal_gpio.o [1]
 HAL_GPIO_EXTI_IRQHandler
@@ -471,8 +471,8 @@ SysTick_Handler         0x08003445    0xe  Code  Gb  stm32f4xx_it.o [1]
 SystemClock_Config      0x08002e2f   0xb4  Code  Gb  main.o [1]
 SystemCoreClock         0x20000000    0x4  Data  Gb  system_stm32f4xx.o [1]
 SystemInit              0x080036c1   0x3a  Code  Gb  system_stm32f4xx.o [1]
-TIM3_IRQHandler         0x0800349b   0x1e  Code  Gb  stm32f4xx_it.o [1]
-TIM4_IRQHandler         0x080034b9    0x6  Code  Gb  stm32f4xx_it.o [1]
+TIM3_IRQHandler         0x0800349d   0x1e  Code  Gb  stm32f4xx_it.o [1]
+TIM4_IRQHandler         0x080034bb    0x6  Code  Gb  stm32f4xx_it.o [1]
 TIM_Base_SetConfig      0x08002935   0x90  Code  Gb  stm32f4xx_hal_tim.o [1]
 TIM_ETR_SetConfig       0x08002a4f   0x14  Code  Lc  stm32f4xx_hal_tim.o [1]
 TIM_ITRx_SetConfig      0x08002a3f   0x10  Code  Lc  stm32f4xx_hal_tim.o [1]
@@ -480,6 +480,8 @@ TIM_TI1_ConfigInputStage
                         0x080029f9   0x22  Code  Lc  stm32f4xx_hal_tim.o [1]
 TIM_TI2_ConfigInputStage
                         0x08002a1b   0x24  Code  Lc  stm32f4xx_hal_tim.o [1]
+USEchoDistance          0x2000098c    0x4  Data  Gb  stm32f4xx_it.o [1]
+USEchoTime              0x20000988    0x4  Data  Gb  stm32f4xx_it.o [1]
 UsageFault_Handler      0x0800343d    0x2  Code  Gb  stm32f4xx_it.o [1]
 _Close_all              0x08003611   0x58  Code  Gb  xcloseall.o [3]
 _EncodingSb_Mbtowc      0x08001eff   0x30  Code  Gb  xencoding_sb.o [3]
@@ -521,7 +523,7 @@ __cexit_closeall        0x0800381b         Code  Gb  cexit.o [5]
 __close                 0x080035df   0x1a  Code  Gb  close.o [6]
 __cmain                 0x080037f5         Code  Gb  cmain.o [5]
 __cstart_closeall       0x080039d8         Data  Gb  cstart_closeall.o [5]
-__data_Aldata           0x20000988    0x8  Data  Gb  xxmemxmalloc.o [3]
+__data_Aldata           0x20000990    0x8  Data  Gb  xxmemxmalloc.o [3]
 __data_GetMemChunk      0x08001f45   0x2c  Code  Gb  xgetmemchunk.o [3]
 __dwrite                0x08003289   0x1e  Code  Gb  dwrite.o [6]
 __exit                  0x08003829   0x14  Code  Gb  exit.o [6]
@@ -595,8 +597,7 @@ remove                  0x080035f9   0x16  Code  Gb  remove.o [6]
 sFileInfo               0x200007f0   0x80  Data  Lc  XShHandles.o [3]
 strchr                  0x08001335         Code  Gb  strchr.o [5]
 strlen                  0x0800134d         Code  Gb  strlen.o [5]
-time                    0x20000994    0x4  Data  Gb  stm32f4xx_it.o [1]
-uwTick                  0x20000990    0x4  Data  Gb  stm32f4xx_hal.o [1]
+uwTick                  0x20000998    0x4  Data  Gb  stm32f4xx_hal.o [1]
 
 
 [1] = C:\stm_projects\disco_tim2\EWARM\disco_tim2\Obj
@@ -608,7 +609,7 @@ uwTick                  0x20000990    0x4  Data  Gb  stm32f4xx_hal.o [1]
 
   14 774 bytes of readonly  code memory
      172 bytes of readonly  data memory
-   2 456 bytes of readwrite data memory
+   2 460 bytes of readwrite data memory
 
 Errors: none
 Warnings: none

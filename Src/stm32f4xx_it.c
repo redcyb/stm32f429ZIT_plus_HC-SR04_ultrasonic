@@ -37,7 +37,8 @@
 
 /* USER CODE BEGIN 0 */
 
-__IO uint32_t time = 0;
+__IO uint32_t USEchoTime = 0;
+extern uint32_t USEchoDistance = 0;
 
 /* USER CODE END 0 */
 
@@ -207,9 +208,10 @@ void EXTI0_IRQHandler(void)
 
     HAL_TIM_Base_Stop_IT(&htim4);
 
-    time = __HAL_TIM_GET_COUNTER(&htim4) / 13;
+    USEchoTime = __HAL_TIM_GET_COUNTER(&htim4);
+    USEchoDistance = USEchoTime / 11;
 
-    printf("StopTimerVal: %d \n\n", time);
+    printf("StopTimerVal: %d \n\n", USEchoDistance);
 
   }
 
